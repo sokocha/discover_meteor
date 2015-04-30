@@ -16,7 +16,8 @@ Meteor.methods({
     check(Meteor.userId(), String);
     check(postAttributes, {
       title: String,
-      url: String
+      url: String,
+      // message: Text
     });
     
     var user = Meteor.user();
@@ -25,6 +26,8 @@ Meteor.methods({
       author: user.username, 
       submitted: new Date()
     });
+
+
     
     var postId = Posts.insert(post);
     

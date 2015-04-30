@@ -7,12 +7,13 @@ Template.postEdit.events({
     var postProperties = {
       url: $(e.target).find('[name=url]').val(),
       title: $(e.target).find('[name=title]').val()
+      // message: $(e.target).find('[name=message]').val()
     }
     
     Posts.update(currentPostId, {$set: postProperties}, function(error) {
       if (error) {
         // display the error to the user
-        alert(error.reason);
+        throwError(error.reason);
       } else {
         Router.go('postPage', {_id: currentPostId});
       }
