@@ -1,32 +1,19 @@
-<template name = "postSubmit">
-  <form class = 'main'>
-    <div class = "control-group">
-      <label class = "control-label" for = "url"> URL</label>
-      <div class = "controls">
-        <input name="url" type= "text" value = "" placeholder="Your URL">
+<template name="postSubmit">
+  <form class="main form page">
+    <div class="form-group {{errorClass 'url'}}">
+      <label class="control-label" for="url">URL</label>
+      <div class="controls">
+          <input name="url" id="url" type="text" value="" placeholder="Your URL" class="form-control"/>
+          <span class="help-block">{{errorMessage 'url'}}</span>
       </div>
     </div>
-
-    <div class = "control-group">
-      <label class = "control-label" for = "title"> Title</label>
-      <div class = "controls">
-        <input name = "title" type = "text" value = "" placeholder = "Name your post">
+    <div class="form-group {{errorClass 'title'}}">
+      <label class="control-label" for="title">Title</label>
+      <div class="controls">
+          <input name="title" id="title" type="text" value="" placeholder="Name your post" class="form-control"/>
+          <span class="help-block">{{errorMessage 'title'}}</span>
       </div>
     </div>
-
-    <div class = "control-group">
-      <label class = "control-label" for = "message">Message</label>
-      <div class = "controls">
-        <input name = "message" type = "text" value = "">
-      </div>
-    </div>
-
-    <div class = "control-group">
-      <div class = "controls">
-        <input type = "submit" value = "Submit!" class = "btn btn-primary">
-      </div>
-    </div>
+    <input type="submit" value="Submit" class="btn btn-primary"/>
   </form>
-
-
 </template>
