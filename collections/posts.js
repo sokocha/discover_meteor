@@ -1,5 +1,9 @@
 Posts = new Mongo.Collection('posts');
 
+Posts.allow({
+  update: ownsDocument, remove: ownsDocument
+});
+
 Meteor.methods({
   postInsert: function(postAttributes) {
     check(Meteor.userId(), String);
@@ -22,3 +26,6 @@ Meteor.methods({
     };
   }
 });
+
+
+
